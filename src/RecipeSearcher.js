@@ -16,6 +16,38 @@ class RecipeSearcher extends Component {
         })
     }
 
+    getRecipeByName = (name) => {
+        axios ({
+            method:"GET",
+            url:"https://www.themealdb.com/api/json/v1/1/search.php",
+            params: {
+                s: name
+            }
+        })
+        .then(function(response) {
+            console.log(response);
+        })
+        .then(function(error) {
+            console.log(error);
+        })
+    }
+
+    getRecipeByLetter = (letter) => {
+        axios ({
+            mehtod:"GET",
+            url:"https://www.themealdb.com/api/json/v1/1/search.php",
+            params: {
+                f: letter
+            }
+        })
+        .then(function(response) {
+            console.log(response);
+        })
+        .then(function(error) {
+            console.log(error);
+        })
+    }
+
     render() {
         return(
             <div>
